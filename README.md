@@ -9,6 +9,7 @@ A sleek, pixel-art inspired weather application that provides real-time weather 
 - **Smart Caching**: Local storage for faster loading and reduced API calls
 - **Weather Trends**: View temperature trends with a pixel-style chart
 - **Optimized Performance**: Loads in under 1 second with cached data
+- **Resilient Icon System**: Multi-layered fallback system for weather icons
 
 ## Weather Icons
 
@@ -17,6 +18,9 @@ We use Animated SVG Weather Icons from [basmilius/weather-icons](https://github.
 1. The icons are stored locally in `/assets/weather-icons/`
 2. Each icon is optimized for performance
 3. Backup repository: [Weather Icons Backup](https://github.com/basmilius/weather-icons/archive/refs/heads/master.zip)
+4. Automatic fallback to CDN if local icons are unavailable
+5. In-memory caching for instant loading
+6. Local storage backup for offline access
 
 ### Icon Usage
 
