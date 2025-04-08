@@ -6,6 +6,7 @@
     <title>WeatherWise Preview</title>
     <link href="https://cdn.jsdelivr.net/npm/chart.js@3.7.0/dist/chart.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.0/dist/chart.min.js"></script>
+    <script src="assets/weather-icons/iconManager.js"></script>
     <style>
         :root {
             --primary-color: #007AFF;
@@ -1012,6 +1013,18 @@
             div.textContent = icon;
             div.className = animation;
             return div;
+        }
+
+        // Update the updateWeatherIcon function
+        async function updateWeatherIcon(weatherCode) {
+            const iconContainer = document.querySelector('.weather-icon');
+            try {
+                const iconSvg = await weatherIconManager.getIcon(weatherCode);
+                iconContainer.innerHTML = iconSvg;
+            } catch (error) {
+                console.error('Failed to update weather icon:', error);
+                iconContainer.innerHTML = weatherIconManager.getDefaultIcon();
+            }
         }
     </script>
 </body>
